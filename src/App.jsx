@@ -27,13 +27,20 @@ function App() {
             <ul className="puppyDataList">
               <li>Age: {featuredPup.age}</li>
               <li>Email: {featuredPup.email}</li>
-              <li>Cute?: {featuredPup.isCute}</li>
+              <li>Is Cute: {featuredPup.isCute ? "Yes" : "No"}</li>
               <li>Tricks: 
-                <ul>{featuredPup.tricks.map((trick)=>{
-                  return (
-                    <li>{trick.title}</li>
-                  )
-              })}</ul>
+                <ul>
+                  {
+                  //  featuredPup.tricks.length !== 0 ? console.log("SOME") : console.log("NONE")
+                  //     trick.length > 0 ? featuredPup.tricks.map((trick)=>{
+                  //       return <li>{trick.title}</li>
+                  //     })  : <li>None</li>
+
+                  featuredPup.tricks.length !== 0 ? featuredPup.tricks.map((trick)=>{
+                          return <li>{trick.title}</li>
+                        }) : <li>None</li>
+}
+                </ul>
               </li>
             </ul>
           </div>
